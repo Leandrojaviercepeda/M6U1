@@ -1,0 +1,12 @@
+.novedades {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1em;
+}
+
+.novedad {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

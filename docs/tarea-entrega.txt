@@ -1,0 +1,13 @@
+Basandome en el sitio de Transportes que venimos utilizando a modo de ejemplo durante el transcurso de la cursada de la "Diplomatura en programación web full stack con React JS".
+Segun lo propuesto en la consigna del modulo 6 unidad 1: "Pensar y escribir en un archivo que sección de tu sitio va a ser dinámica y como plantearias la tabla"
+
+Me centrare en la seccion de /nosotros para desarrollarla con el fin de que la misma sea dinamica. La idea es poder añadir personas al Staff de "Transportes".
+Para esto se realizarian las siguientes actividades:
+* Creación del CRUD (Create, Read, Update y Delete) de /nosotros.
+* Creación de la tabla donde se almacenara el staff, la cual nos servira para listar, modificar, agregar y quitar personas del staff.
+* La tabla contará con 4 campos:
+    - id: un entero incremental que será nuestra clave primaria.
+    - nombre: un varchar de máximo 50 caracteres.
+    - apellido: un varchar de máximo 50 caracteres.
+    - email: un varchar de máximo 65 caracteres.
+    - descripcion: un varchar de máximo 250 caracteres.
