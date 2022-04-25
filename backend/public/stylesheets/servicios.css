@@ -1,5 +1,5 @@
 .sevicios {
-    display: flex;
+    display: grid;
     justify-content: space-around;
     align-items: center;
     gap: 1em;

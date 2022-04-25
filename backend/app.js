@@ -8,6 +8,7 @@ var hbs = require('hbs');
 var { v4: genuuid} = require('uuid');
 require('dotenv').config();
 
+// Public routes
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
@@ -16,6 +17,11 @@ var contactoRouter = require('./routes/contacto');
 var nosotrosRouter = require('./routes/nosotros');
 var novedadesRouter = require('./routes/novedades');
 var serviciosRouter = require('./routes/servicios');
+
+// Private routes
+var adminIndexRouter = require('./routes/admin/index');
+var adminHomeRouter = require('./routes/admin/home');
+var adminNovedadesRouter = require('./routes/admin/novedades');
 
 var app = express();
 const uuidGenerated = genuuid();
@@ -38,6 +44,7 @@ app.use(cookieParser(uuidGenerated));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'images')));
 
+// Public
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
@@ -46,6 +53,11 @@ app.use('/contacto', contactoRouter);
 app.use('/nosotros', nosotrosRouter);
 app.use('/novedades', novedadesRouter);
 app.use('/servicios', serviciosRouter);
+
+// Private
+app.use('/admin', adminIndexRouter);
+app.use('/admin/home', adminHomeRouter);
+app.use('/admin/novedades', adminNovedadesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

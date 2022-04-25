@@ -10,16 +10,16 @@ router.get('/', function(req, res, next) {
 router.post('/', async function(req, res, next) {
   try {
     const user = await userModel.login(req.body.username, req.body.password);
-    if (!user) return res.render('login', {error: 'Usuario o contraseña incorrectos.', loggedIn: false});
+    if (!user) return res.render('login', { alert: {type: 'danger', message: 'Usuario o contraseña incorrectos.'}, loggedIn: false});
 
     req.session.store = {
       loggedIn: Boolean(user),
+      isAdmin: Boolean(user?.admin),
       user: user,
     }
-    
-    return res.redirect('/home');
+    return res.redirect(user?.admin ? 'admin/home' : '/home');
   } catch (error) {
-    if (error) return res.render('login', {error : error.message || error});
+    if (error) return res.render('login', {alert: {type: 'danger', message: error.message || error}});
   }
 });
 
