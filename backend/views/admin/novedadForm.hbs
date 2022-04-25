@@ -1,6 +1,6 @@
 <section class="holder">
     <h2>{{title}}</h2>
-    <div class="grid">
+    <div class="flex-center">
         <form action={{action}} method={{method}} class="card shadow p-3 mb-5 bg-body rounded" style="width: 50%;">
             {{#if novedad}}
             <div class="m-3">
@@ -23,7 +23,7 @@
                 <textarea class="form-control" rows="3" name="body" {{#if
                     novedad}}placeholder='{{novedad.body}}'{{/if}}></textarea>
             </div>
-            <div class="m-3 grid">
+            <div class="m-3 flex-center">
                 <button class="btn btn-primary" style="width: 50%;" type="submit">{{#if
                     novedad}}Actualizar{{/if}} {{#unless novedad}}Agregar{{/unless}}</button>
             </div>

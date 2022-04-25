@@ -25,16 +25,16 @@
 <body>
     {{> header}}
     {{#if isAdmin}}
-        {{> adminNav}}
+    {{> adminNav}}
     {{/if}}
 
     {{#unless isAdmin}}
-        {{> nav}}
+    {{> nav}}
     {{/unless}}
 
     {{{body}}}
     {{#if alert}}
-    <div class="grid">
+    <div class="flex-center">
         <span class="alert alert-{{alert.type}} p-3" role="alert">{{alert.message}}</span>
     </div>
     {{/if}}

@@ -10,6 +10,7 @@ require('dotenv').config();
 
 // Public routes
 var indexRouter = require('./routes/index');
+var errorRouter = require('./routes/error');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
 var homeRouter = require('./routes/home');
@@ -22,6 +23,7 @@ var serviciosRouter = require('./routes/servicios');
 var adminIndexRouter = require('./routes/admin/index');
 var adminHomeRouter = require('./routes/admin/home');
 var adminNovedadesRouter = require('./routes/admin/novedades');
+var adminStaffRouter = require('./routes/admin/staff');
 
 var app = express();
 const uuidGenerated = genuuid();
@@ -45,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Public
 app.use('/', indexRouter);
+app.use('/error', errorRouter);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/home', homeRouter);
@@ -57,6 +60,7 @@ app.use('/servicios', serviciosRouter);
 app.use('/admin', adminIndexRouter);
 app.use('/admin/home', adminHomeRouter);
 app.use('/admin/novedades', adminNovedadesRouter);
+app.use('/admin/staff', adminStaffRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -71,7 +75,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', {layout: false});
 });
 
 module.exports = app;

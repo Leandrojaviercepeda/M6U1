@@ -2,19 +2,12 @@
     font-size: 0.8em;
 }
 
-.personas {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
 .persona {
-    width: 18%;
-    float: left;
-    margin-left: 2.25%;
+    max-width: 20%;
+    min-width: 20%;
     border: 1px solid #ddd;
     border-radius: 0.25em;
-    box-sizing: border-box;
+    margin: 0.5em;
 }
 
 .persona {
@@ -44,10 +37,7 @@
 }
 
 .persona p {
-    font-size: 0.7em;margin: 0 1em 1em;
+    font-size: 0.7em;
+    margin: 0 1em 1em;
     color: #444;
-}
-
-.persona:first-child {
-    margin-left: 0;
 }

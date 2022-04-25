@@ -1,21 +1,14 @@
 .lk:hover {
-    background-color: #255DA2 !important;;
+    background-color: #255DA2 !important;
     color: white;
 }
 
 .circle-icon {
-    font-size: 3em;
-    color: white;
-    background: black;
-    width: 100px;
-    height: 100px;
+    background: white;
+    padding: 0.5em;
     border-radius: 50%;
-    line-height: 100px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+    color: #255DA2;
+    font-size: max(5vw, 7em);
 }
 
 .center {
