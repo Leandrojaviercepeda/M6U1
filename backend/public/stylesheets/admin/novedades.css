@@ -27,5 +27,6 @@
 
 .actions {
     display: flex;
+    padding: 10px !important;
     gap: 0.5em;
 }
