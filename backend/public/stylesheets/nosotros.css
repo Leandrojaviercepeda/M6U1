@@ -2,6 +2,12 @@
     font-size: 0.8em;
 }
 
+.personas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .persona {
     max-width: 20%;
     min-width: 20%;

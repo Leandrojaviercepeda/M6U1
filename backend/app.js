@@ -23,7 +23,6 @@ var serviciosRouter = require('./routes/servicios');
 var adminIndexRouter = require('./routes/admin/index');
 var adminHomeRouter = require('./routes/admin/home');
 var adminNovedadesRouter = require('./routes/admin/novedades');
-var adminStaffRouter = require('./routes/admin/staff');
 
 var app = express();
 const uuidGenerated = genuuid();
@@ -60,7 +59,6 @@ app.use('/servicios', serviciosRouter);
 app.use('/admin', adminIndexRouter);
 app.use('/admin/home', adminHomeRouter);
 app.use('/admin/novedades', adminNovedadesRouter);
-app.use('/admin/staff', adminStaffRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
